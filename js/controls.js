@@ -18,9 +18,13 @@ export function Controls({ buttonPlay, buttonStop, buttonWrapper }) {
    }
 
    function clicked(button) {
-      cleanClick();
-      button.style.backgroundColor = "#02799D";
-      button.firstElementChild.firstElementChild.style.fill = "white";
+      if (button.style.backgroundColor != "rgb(2, 121, 157)") {
+         cleanClick();
+         button.style.backgroundColor = "#02799D";
+         button.firstElementChild.firstElementChild.style.fill = "white";
+      } else {
+         cleanClick();
+      }
    }
 
    function cleanClick() {

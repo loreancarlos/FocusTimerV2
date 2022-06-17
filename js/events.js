@@ -19,11 +19,7 @@ export function Events({ controls, timer, sound }) {
 
    buttonWrapper.forEach((element) => {
       element.addEventListener("click", () => {
-         if (sound.bgAudio.paused) {
-            controls.clicked(element.firstElementChild);
-         } else {
-            controls.cleanClick();
-         }
+         controls.clicked(element.firstElementChild);
          sound.play(element.firstElementChild);
       });
    });

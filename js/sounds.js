@@ -2,6 +2,7 @@ export default function () {
 
    let bgAudio = new Audio();
    bgAudio.loop = true;
+   let lastSrc;
 
    function play(button) {
       const buttonClass = button.classList.value || 0;
@@ -33,12 +34,13 @@ export default function () {
    }
 
    function setMedia(src) {
-      console.log(`${bgAudio.src} + ${src}`)
-      if (bgAudio.src == src) {
+      if (lastSrc == src) {
          stop();
+         lastSrc = 0;
       } else {
          bgAudio.src = src;
          bgAudio.play();
+         lastSrc = src;
       }
    }
 

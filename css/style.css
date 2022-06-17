@@ -79,3 +79,15 @@ span {
    height: 15.2rem;
    width: 13.8rem;
 }
+
+@media (max-width: 900px) {
+   main {
+      flex-direction: column;
+   }
+}
+
+@media (max-width: 768px) {
+   :root {
+      font-size: 55%;
+   }
+}
