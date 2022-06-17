@@ -4,9 +4,9 @@ import { Controls } from "./controls.js";
 import { Timer } from "./timer.js";
 import { Events } from "./events.js";
 import Sounds from "./sounds.js";
-import { buttonPlay, buttonPause, buttonStop, buttonSetTime, buttonSoundOn, buttonSoundOff, minutesDisplay, secondsDisplay } from "./elements.js";
+import { buttonPlay, buttonStop, buttonIncreaseTime, buttonDecreaseTime, buttonSoundForest, buttonSoundRain, buttonSoundCoffeeShop, buttonSoundFireplace, minutesDisplay, secondsDisplay } from "./elements.js";
 
-const controls = Controls({ buttonPlay, buttonPause, buttonStop, buttonSetTime, buttonSoundOn, buttonSoundOff });
+const controls = Controls({ buttonSoundForest, buttonSoundRain, buttonSoundCoffeeShop, buttonSoundFireplace });
 const timer = Timer({ minutesDisplay, secondsDisplay, controls });
 const sound = Sounds();
 

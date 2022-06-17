@@ -1,42 +1,45 @@
-import { buttonPlay, buttonPause, buttonStop, buttonSetTime, buttonSoundOn, buttonSoundOff } from "./elements.js";
+import { buttonPlay, buttonStop, buttonIncreaseTime, buttonDecreaseTime, buttonSoundForest, buttonSoundRain, buttonSoundCoffeeShop, buttonSoundFireplace } from "./elements.js";
 
 export function Events({ controls, timer, sound }) {
    buttonPlay.addEventListener("click", () => {
-      controls.play();
       timer.countDown();
-      sound.pressButton();
-   });
-
-   buttonPause.addEventListener("click", () => {
-      controls.pause();
-      timer.hold();
-      sound.pressButton();
    });
 
    buttonStop.addEventListener("click", () => {
-      controls.reset();
       timer.reset();
-      sound.pressButton();
    });
 
-   buttonSetTime.addEventListener("click", () => {
-      sound.pressButton()
-      const newMinutes = controls.getMinutes();
-      if (newMinutes) {
-         timer.update(newMinutes, 0);
-         timer.updateMinutes(newMinutes);
-      } else {
-         timer.reset();
-      }
+   buttonIncreaseTime.addEventListener("click", () => {
+      timer.increaseTime();
    });
 
-   buttonSoundOn.addEventListener("click", () => {
-      controls.soundOn();
+   buttonDecreaseTime.addEventListener("click", () => {
+      timer.decreaseTime();
+   });
+
+   buttonSoundForest.addEventListener("mouseenter", () => {
+      controls.mouseIn(buttonSoundForest);
+   });
+
+   buttonSoundForest.addEventListener("mouseout", () => {
+      controls.mouseOut(buttonSoundForest);
+   });
+
+   buttonSoundForest.addEventListener("click", () => {
+      controls.soundPlay();
       sound.bgAudio.pause();
    });
 
-   buttonSoundOff.addEventListener("click", () => {
+   buttonSoundRain.addEventListener("click", () => {
       controls.soundOff();
       sound.bgAudio.play();
+   });
+
+   buttonSoundCoffeeShop.addEventListener("click", () => {
+
+   });
+
+   buttonSoundFireplace.addEventListener("click", () => {
+
    });
 }

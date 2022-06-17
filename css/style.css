@@ -9,10 +9,11 @@
    font-size: 62.5%;
 
    --ff-primary: 'Roboto', sans-serif;
-   --bg-color: #121214;
+   --bg-color: white;
    --bg-controls-color: rgba(66, 211, 255, 0.13);
+   --bg-sound: #E1E1E6;
    --base-color: #42D3FF;
-   --tx-color: white;
+   --tx-color: #323238;
 }
 
 body {
@@ -27,10 +28,9 @@ body {
 
 main {
    display: flex;
-   flex-direction: column;
    align-items: center;
    justify-content: center;
-   gap: 1.6rem;
+   gap: 19.2rem;
 
    flex: 1;
 }
@@ -43,32 +43,41 @@ footer {
 
 span {
    color: var(--tx-color);
-   font-size: 8.8rem;
-   line-height: 10.3rem;
+   font-size: 12.6rem;
+   line-height: 10rem;
 }
 
-#timer-wrapper {
+#counter-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 4.5rem;
+}
+
+#time-wrapper {
    display: flex;
 }
 
 #controls-wrapper {
-   padding: 2.2rem 4.0rem;
-   background: var(--bg-controls-color);
-   border-radius: 999.9rem;
-
    display: flex;
-   gap: 3.2rem;
+   gap: 4.0rem;
+   justify-content: center;
 }
 
-button {
+#controls-wrapper button {
    background-color: transparent;
    cursor: pointer;
 }
 
-#sound-wrapper {
-   margin: 0 4.0rem 3.2rem 0;
+#sounds-wrapper {
+   display: grid;
+   grid-template-areas: "forest rain""coffeShop fireplace";
+   gap: 3.2rem;
 }
 
-.hide {
-   display: none;
+#sounds-wrapper button {
+   background-color: var(--bg-sound);
+   border-radius: 2.4rem;
+
+   height: 15.2rem;
+   width: 13.8rem;
 }
