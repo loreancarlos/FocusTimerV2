@@ -12,7 +12,6 @@
    --bg-color: white;
    --bg-controls-color: rgba(66, 211, 255, 0.13);
    --bg-sound: #E1E1E6;
-   --base-color: #42D3FF;
    --tx-color: #323238;
 }
 
@@ -31,7 +30,6 @@ main {
    align-items: center;
    justify-content: center;
    gap: 19.2rem;
-
    flex: 1;
 }
 

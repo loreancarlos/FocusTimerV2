@@ -1,4 +1,4 @@
-import { buttonPlay, buttonStop, buttonIncreaseTime, buttonDecreaseTime, buttonSoundForest, buttonSoundRain, buttonSoundCoffeeShop, buttonSoundFireplace } from "./elements.js";
+import { buttonPlay, buttonStop, buttonIncreaseTime, buttonDecreaseTime, buttonWrapper } from "./elements.js";
 
 export function Events({ controls, timer, sound }) {
    buttonPlay.addEventListener("click", () => {
@@ -10,36 +10,33 @@ export function Events({ controls, timer, sound }) {
    });
 
    buttonIncreaseTime.addEventListener("click", () => {
-      timer.increaseTime();
+      timer.increase();
    });
 
    buttonDecreaseTime.addEventListener("click", () => {
-      timer.decreaseTime();
+      timer.decrease();
    });
 
-   buttonSoundForest.addEventListener("mouseenter", () => {
-      controls.mouseIn(buttonSoundForest);
+   buttonWrapper.forEach((element) => {
+      element.addEventListener("click", () => {
+         if (sound.bgAudio.paused) {
+            controls.clicked(element.firstElementChild);
+         } else {
+            controls.cleanClick();
+         }
+         sound.play(element.firstElementChild);
+      });
    });
 
-   buttonSoundForest.addEventListener("mouseout", () => {
-      controls.mouseOut(buttonSoundForest);
+   buttonWrapper.forEach((element) => {
+      element.addEventListener("mouseover", () => {
+         controls.mouseOver(element.firstElementChild);
+      });
    });
 
-   buttonSoundForest.addEventListener("click", () => {
-      controls.soundPlay();
-      sound.bgAudio.pause();
-   });
-
-   buttonSoundRain.addEventListener("click", () => {
-      controls.soundOff();
-      sound.bgAudio.play();
-   });
-
-   buttonSoundCoffeeShop.addEventListener("click", () => {
-
-   });
-
-   buttonSoundFireplace.addEventListener("click", () => {
-
+   buttonWrapper.forEach((element) => {
+      element.addEventListener("mouseout", () => {
+         controls.mouseOut(element.firstElementChild);
+      });
    });
 }
