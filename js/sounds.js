@@ -33,6 +33,7 @@ export default function () {
    }
 
    function setMedia(src) {
+      console.log(`${bgAudio.src} + ${src}`)
       if (bgAudio.src == src) {
          stop();
       } else {
