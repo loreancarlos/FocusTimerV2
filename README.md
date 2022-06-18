@@ -4,12 +4,12 @@ Este é o projeto do primeiro desafio do Stage 05 do programa Explorer da [Rocke
 
 ## Índice
 
-- [Projeto](#Focus_Timer_V2)
+- [Projeto](#FocusTimerV2)
   - [Screenshots](#screenshots)
   - [Tecnologias Utilizadas](#tecs)
   - [Autor](#autor)
 
-## Focus_Timer_V2
+## FocusTimerV2
 
 Este projeto é o resultado do conhecimento adquirido no programa Explorer, até o momento.  
 
